@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI", "UI.vcproj", "{192D57BD-63D8-4963-8035-95143683C0A8}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{192D57BD-63D8-4963-8035-95143683C0A8}.Debug.ActiveCfg = Debug|Win32
+		{192D57BD-63D8-4963-8035-95143683C0A8}.Debug.Build.0 = Debug|Win32
+		{192D57BD-63D8-4963-8035-95143683C0A8}.Release.ActiveCfg = Release|Win32
+		{192D57BD-63D8-4963-8035-95143683C0A8}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

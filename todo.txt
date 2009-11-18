@@ -1,0 +1,14 @@
+TextArea
+ComboBox
+ToolTips
+List
+Move constants to classes
+Fix focus key bug (reported by Heffo)
+Fix NVidia bug
+UNICODE support
+Let sliders/scrollbars use the picking engine instead of manual mouse checking.
+Minimum width for widgets
+implement delegates for events (like C#)
+Clean up textutilities
+Mouse pointer callbacks
+Set a default component focused when no component is focused (now possible with Gui)

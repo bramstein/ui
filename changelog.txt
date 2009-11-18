@@ -1,0 +1,188 @@
+Added basic::SliderTheme
+Added RangeUtil for range component themes
+Added HORIZONTAL and VERTICAL to Component constants.
+Added basic::TextFieldTheme and moved KeyListener to TextField
+Added basic::LabelTheme
+Cleaned up TextUtil
+Removed Container::getChild(int n) - inconsistent and slow (and unused)
+Made paint const (changed my mind from logic const to code const (ie. painting might change the objects appearance, but it does not affect the in memory object)
+Fix popup depth (casted it wrong - duh)
+Re-enabled dialog resizing (moved mouselistener to private inner class), but still needs a different mouse pointer
+Added basic::DialogTheme & basic::TitleBarTheme
+Added basic::CheckboxTheme
+Added Icon painting to Button painting
+Added basic::RadioButtonTheme
+Fixed un-initialized boolean in AbstractButton (whoops!)
+Fixed button-is-stuck bug in default theme
+Added basic::ToggleButtonTheme
+Removed MSVC dependent #pragma once statements (they were redundant anyway)
+Fixed text alignment in menuitems in basic theme
+Added basic::MenuTheme, basic::MenuItemTheme, basic::PopupMenuTheme and basic::MenuBarTheme
+Added setColor to LineBorder
+Made basic::ButtonTheme a base class
+Removed utility class from basic theme and moved utility functions to theme namespace so it can be used by all themes
+Moved key clicks to private inner class of AbstractButton
+Fixed text rendering to take insets into consideration
+Rewrote text handling to support multiple lines and word wrapping (for textarea)
+Added basic::ButtonTheme
+Added basic theme
+Fixed TextureFrame
+##############
+#Version: 0.03
+##############
+Cleaned up projects
+Fixed the remaining compiler warnings in the library (int to GLfloat conversions)
+Changed Config.h to use the normal OpenGL headers instead of SDL_Opengl.h (more portable)
+Added UIDemo, a simple project with a different font engine
+Reorganized directory structure and projects
+Added some more documentation
+Redid arrow paint code..
+##############
+#Version: 0.02
+##############
+Replaced Arial test font with Bitstream Vera Sans font (better license, which allows me to distribute the font with the gui test)
+Added license to all header files...
+Dialog close button now actually closes the dialog.
+Added color schemes (bit buggy, but it should never make it into real code anyway)
+Added Gui superclass to deal with managing multiple frames, input event gathering and general configuration options.
+Finished render-to-texture demo
+Implemented selection painting, to do custom selection painting
+Hacked the selection engine to also check for texture colors
+Added prelimary render-to-texture code
+Fixed some compiler warnings (float to int conversions)
+Added revised BSD license to cpp files
+Added resizable scrollbar thumbs (scrollpane automatically resizes the thumb)
+Fixed tab going to TextField
+Fixed setEnabled to recurse down the component tree
+Rewrote FlowLayout
+Created DarkerPaint and LighterPaint to automatically generate lighter and darker colors from user specified colors.
+Hacked around in the font engine (colored fonts works + nice speedup)
+Added TextField text modification (only simple)
+Added ButtonGroup back in
+Modified LineBorder to accept Insets for irregular shaped borders..
+Removed restrictions from PopupLayout to only layout one Component.
+Moved blending to Graphics
+Fixed focuslost after menuitem selection
+Patted myself on the back a few times
+Enjoyed using the keyboard to control the GUI :)
+Fixed Key related code to include KEY_TYPED
+Moved key event generation to FocusManager as it has more information about the focus owner(s).
+Added keylisteners to the theme's of Button, ToggleButton, MenuItem, Menu, CheckBox and RadioButton (*sigh* another good reason to create an inheritance tree for buttons in the default theme).
+Added programmatic "clicks" to AbstractButton, doPressed, doReleased and doClicked
+Fixed ScrollPanes' Scrollbars
+Fixed Scroller to only send changeEvents when it is actually changed.
+Messed around with the accumulation buffer for smooth shadows, ended up just drawing transparent quads...
+Added ScrollPane
+Fixed Button setting FocusPainted on and off (is done automagically in Component).
+Finished Scrollbar & Theme (only thing left is a resizable Scroller)...
+Fixed FocusManager & Menubar, hopefully last time... (Yay?)
+Replaced memory tracker with newer version (still no memory leaks)
+Fixed FocusManager & Menubar properly (Yay again)
+Fixed FocusManager (now focus forward and backward properly work. Yay :)
+Focus is lost when a MenuItem is selected (this causes the menu to properly close).
+Messed around with FocusManager a bit (basics work, advanced stuff does not)
+Added Scrollbar & ScrollbarTheme
+Modified BorderLayout to layout without using the corners (useful for scrollbars)
+Added MouseMotion to MouseListener and MouseEvent
+Fixed slider Sliding code
+Added GLCanvas, GLCanvasTheme and Rotating Cube demo to UITest
+Added Slider & SliderTheme
+Added TextFieldTheme
+Fixed memory leak in Panel (hack solution, a flow layout gets created even if a user specified layout is given.. might be better to remove the default to flowlayout)
+Renamed Container::getComponent() and Container::getComponentNum() to Container::getChild() and Container::getNumberOfChildren(). More consistent. 
+Added TextField
+Fixed Interpolator
+Added ProgressTest to test app (need to fix up Interpolator to call user defined functions)
+Added ProgressBarTheme
+Added ProgressBar
+Added TitleBar, TitleBarTheme and connected them to Dialog
+Added CheckBox, RadioButton and Label
+Added Dialog
+Fixed up themes for MenuItem, MenuBar, Menu and PopupMenu.
+made CompoundComponent parent of AbstractButton, Menubar, Window and Menu (nicely hides add and remove methods)
+removed some container methods (remove(int) & clearAll())
+modified UITest test code to be more real-life-like
+Implemented new memory ownership policy
+added MenuItem, Menu and PopupMenu
+modified FreeTypeFont engine to cache glyph dimensions (much faster, as we query for the dimension in real-time)
+added text chopping
+really removed TextHolder
+Cleaned up GlyphContext
+Fixed bevelborder to render proper borders
+Cleaned up Component (removed defaultColors, added asserts, moved font to theme)
+Rewrote Font (!IMPORTANT! Fonts are now no longer part of the main library. This serves two purposes; the library no longer depends on other libraries, and the user is free to implement his or her own font rendering system. See the documentation for more details)
+Implemented ToggleButton and it´s theme
+added setEnabled en isEnabled to Component
+Graphics now renders gradient colors on all basic types (line, rect, fillrect and fillcircle)
+Removed TextHolder
+Implemented AbstractButton
+Implemented Button
+Implemented Property events and listener
+Rewrote Color and added Paint and GradientColor
+Renamed theme::ComponentTheme to theme::ThemeComponent to avoid confusion with theme::defaulttheme::ComponentTheme. Not sure it helps.
+fixed 'bug' in draw rectangle causing rectangles to be drawn bigger than they actually are.
+added theme code
+rewrote Frame & Window 
+rewrote Window class header
+fixed memory leak in UITest
+worked some on the uitest program, and setup initial OpenGL testing code.
+It now compiles again :P
+Fixed up color
+Cleaned up SelectionManager a bit (removed old redundant code, plus never used methods).
+Playing some NFS::Underground...
+Cleaned up the util namespace and documented its members (except TextHolder & Color).
+Cleaned up the border namespace and documented its members.
+Fixed border in Components Copy Constructor.
+Removed AbstractBorder (Border now replaces it). There was not much point in keeping the interface apart.
+Removed forward Ptr and Ref declarations, they were more trouble then they're worth (removing solved alot of problems, at least I like to think it did. Yay for me).
+cleanud up the layout namespace and documented its members.
+Cleaned up Container, and wrote its Copy Constructor and Assignment operator.
+Fixed Components copy constructor and made it exception safe.
+modified Point to have overloaded operators (easier to work with).
+wrote assignment operator and copy constructor for Component
+added auto_ptr's to classes which have private members that are allocated on the free store (step towards exception safety).
+added some more references to the core library
+moved most constructor initialization to initialization lists.
+fixed getChildren bug
+wrote documentation for all borders and events.
+moved LayoutManager, GridLayout, FlowLayout, PopupLayout and BorderLayout to ui::layout and ui\layout
+moved Rectangle, Point, Dimension, Color, Insets to ui::util namespace and ui\util (which wasnt all that fun doing :()
+moved all Widgets to \ui\components
+added const qualifyers (oops :)
+cleaned up Component massively.
+moved to an independant project (no longer included with Contention)
+##############
+#Version: 0.01
+##############
+Changed validateTree to only layout if a component has more then zero Components (prevents crashing on an empty container with gridlayout -> division by zero)
+Added interpolator animation for dialog drag and popup menus.
+Added Transparency
+Fixed GLCanvas to correctly clear the depth buffer
+Added interpolators (for animation)
+Added vertical scrollbar
+All Colors are now maintained by ColorFactory. *important* -> the framework does not free user allocated Colors anymore
+Added ColorFactory and ColorTheme + default theme
+Fixed buttongroup to only have one button selected on startup
+Moved TextHolder and ButtonGroup to ui::util
+Moved specific Range stuff to util::RangeHolder.
+Added CompoundComponent class (a container class that contain widgets, but without the ability to publically add Components)
+Renamed MouseMotion to MouseDragged and changed behaviour accordingly.
+Rewrote mouse handling
+Fixed slider
+Added horizontal ScrollBar
+Implemented Observer pattern
+Switched to unicode (needs some additional fixing)
+wrote an GLCanvas class (riiiiight..)
+removed picking manager & opengl picking stuff
+changed selection update order to prevent ghosting
+moved picking components to a lower depth to avoid rendering artifacts
+added shadows to dialog and popupmenu
+rewrote picking engine to use color coding
+added Window close and open events and the show() method to Window derivatives
+Improved performance
+Window: proper changing of ontop dialog
+Switched to vectors instead of lists, for better performance.
+##############
+#Version: 0.00
+##############
+Anything before 0.01 has not been documented, although it could probally fill a book :P
